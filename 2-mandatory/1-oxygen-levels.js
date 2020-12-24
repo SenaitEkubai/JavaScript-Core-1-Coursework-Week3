@@ -11,7 +11,16 @@
     Some string methods that might help you here are .replace() and .substring(). 
 */
 
-function safeLevels() {}
+function safeLevels(arr) {
+  /* for (var i = 0; i < arr.length; i++) {
+    if (arr[i] > "19.5%" && arr[i] < "23.5%") {
+      return arr[i];
+    }
+  } */
+  return arr.find(
+    (index) => parseFloat(index) > 19.5 && parseFloat(index) < 23.5
+  );
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
@@ -19,6 +28,8 @@ const oxygenLevels1 = ["24.2%", "11.3%", "19.9%", "23.1%", "29.3%", "20.2%"];
 const oxygenLevels2 = ["30.8%", "23.5%", "18.8%", "19.5%", "20.2%", "31.6%"];
 const oxygenLevels3 = ["200%", "21.1%"];
 
+const { findSourceMap } = require("module");
+const { parse } = require("path");
 const util = require("util");
 
 function test(test_name, actual, expected) {

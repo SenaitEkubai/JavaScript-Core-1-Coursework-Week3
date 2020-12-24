@@ -15,7 +15,13 @@
   
 */
 
-function colonisers() {}
+function colonisers(voyagers) {
+  const stayers = voyagers.filter(
+    (element) => element.startsWith("A") && element.endsWith("family")
+  );
+
+  return stayers;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
