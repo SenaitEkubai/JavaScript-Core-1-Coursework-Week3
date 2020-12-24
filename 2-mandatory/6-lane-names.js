@@ -7,7 +7,7 @@
 */
 
 function getLanes() {
-  streetNames;
+  return streetNames.filter((element) => element.includes("Lane"));
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
