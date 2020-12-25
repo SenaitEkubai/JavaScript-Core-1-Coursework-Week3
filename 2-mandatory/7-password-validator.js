@@ -22,9 +22,13 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(password) {
-  var passw=  /^[A-Za-z]\w{7,14}$/;
-  if(password.value.match(passw) && password.length>=5 )
+function validatePasswords(passwords) {
+  var lettersNumbersAndSpecialCharacters = /(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\!#\$%\.\*&])[A-Za-z\d\!#\$%\.\*&]{5,}/;
+  return passwords.map(
+    (element, index) =>
+      !!element.match(lettersNumbersAndSpecialCharacters) &&
+      passwords.indexOf(element) === index
+  );
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
