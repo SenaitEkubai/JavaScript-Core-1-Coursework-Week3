@@ -27,7 +27,7 @@ function validatePasswords(passwords) {
   return passwords.map(
     (element, index) =>
       !!element.match(lettersNumbersAndSpecialCharacters) &&
-      passwords.indexOf(element) === index
+      passwords.indexOf(element) === index //will check if same password have been used before
   );
 }
 
