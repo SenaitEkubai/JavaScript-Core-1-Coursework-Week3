@@ -10,27 +10,27 @@ Create a function called sortAges which:
 You don't have to worry about making this algorithm work fast! The idea is to get you to
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
+let newArr = [];
 
 function sortAges(arr) {
-  for (let i = arr.length - 1; i >= 0; i--) {
-    // would check if item is a number
-    if (typeof arr[i] !== "number") {
-      arr.splice(i, 1);
+  for (var i = 0; i < arr.length; i++) {
+    // this loop will push every element that satisfy the condition to new array
+    if (typeof arr[i] === "number") {
+      newArr.push(arr[i]);
     }
-    //would check every number with the next number
-    for (j = 0; j < arr.length; j++) {
-      /*will check which number is greater, the greater number  will be assigned to a temporary variable,
-       */
-      if (arr[j] > arr[j + 1]) {
-        tmp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = tmp;
+  }
+  let tmp = [];
+  for (i = 0; i < newArr.length; i++) {
+    for (j = 0; j < newArr.length; j++) {
+      if (newArr[j] > newArr[j + 1]) {
+        tmp = newArr[j];
+        newArr[j] = newArr[j + 1];
+        newArr[j + 1] = tmp;
       }
     }
   }
-  return arr;
+  return newArr;
 }
-
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 const agesCase1 = [
