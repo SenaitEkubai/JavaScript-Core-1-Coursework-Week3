@@ -24,7 +24,7 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 function validatePasswords(passwords) {
   /*
-  (?=.*[A-Z]) is called positive lockahead and will match string when it is followed by one or more Capital letters
+  (?=.*[A-Z]) is called positive lookahead and will match string when it is followed by one or more Capital letters
   as many times as possible the . operator means match any character except line terminator.
 
   */
