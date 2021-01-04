@@ -23,10 +23,16 @@ PasswordValidationResult=  [false, false, false, false, true]
 */
 
 function validatePasswords(passwords) {
-  var lettersNumbersAndSpecialCharacters = /(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\!#\$%\.\*&])[A-Za-z\d\!#\$%\.\*&]{5,}/;
+  /*
+  (?=.*[A-Z]) is called positive lockahead and will match string when it is followed by one or more Capital letters
+  as many times as possible the . operator means match any character except line terminator.
+
+  */
+  var lettersNumbersAndSpecialCharacters = /(?=.*[A-Z][a-z])(?=.*[0-9])(?=.*[\!#\$%\.\*&])[A-Za-z\d\!#\$%\.\*&]{5,}/;
+
   return passwords.map(
     (element, index) =>
-      !!element.match(lettersNumbersAndSpecialCharacters) &&
+      !!element.match(lettersNumbersAndSpecialCharacters) && //match does not return boolean value so the ! makes the function return boolean
       passwords.indexOf(element) === index //will check if same password have been used before
   );
 }

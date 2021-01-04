@@ -19,16 +19,16 @@ function sortAges(arr) {
       newArr.push(arr[i]);
     }
   }
-  let tmp = [];
   for (i = 0; i < newArr.length; i++) {
     for (j = 0; j < newArr.length; j++) {
+      let tmp = newArr[j];
       if (newArr[j] > newArr[j + 1]) {
-        tmp = newArr[j];
         newArr[j] = newArr[j + 1];
         newArr[j + 1] = tmp;
       }
     }
   }
+
   return newArr;
 }
 /* ======= TESTS - DO NOT MODIFY ===== */
