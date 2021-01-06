@@ -10,17 +10,17 @@ Create a function called sortAges which:
 You don't have to worry about making this algorithm work fast! The idea is to get you to
 "think" like a computer and practice your knowledge of basic JavaScript.
 */
-let newArr = [];
 
 function sortAges(arr) {
-  for (var i = 0; i < arr.length; i++) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
     // this loop will push every element that satisfy the condition to new array
     if (typeof arr[i] === "number") {
       newArr.push(arr[i]);
     }
   }
-  for (i = 0; i < newArr.length; i++) {
-    for (j = 0; j < newArr.length; j++) {
+  for (let i = 0; i < newArr.length; i++) {
+    for (let j = 0; j < newArr.length; j++) {
       let tmp = newArr[j];
       if (newArr[j] > newArr[j + 1]) {
         newArr[j] = newArr[j + 1];

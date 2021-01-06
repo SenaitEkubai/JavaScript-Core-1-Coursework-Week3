@@ -32,7 +32,7 @@ function validatePasswords(passwords) {
 
   return passwords.map(
     (element, index) =>
-      !!element.match(lettersNumbersAndSpecialCharacters) && //match does not return boolean value so the ! makes the function return boolean
+      element.match(lettersNumbersAndSpecialCharacters) && //match does not return boolean value so the ! makes the function return boolean
       passwords.indexOf(element) === index //will check if same password have been used before
   );
 }
