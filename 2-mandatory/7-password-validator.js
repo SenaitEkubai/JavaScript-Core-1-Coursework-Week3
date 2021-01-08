@@ -22,18 +22,18 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {
+function validatePasswords(arr) {
   /*
-  (?=.*[A-Z]) is called positive lookahead and will match string when it is followed by one or more Capital letters
-  as many times as possible the . operator means match any character except line terminator.
+  Example (?=.*[A-Z]) is called positive lookahead and will match string when it is followed by one or more Capital letters
+  as many times as possible the . operator means match any character except line terminator. * means one or more times
 
   */
-  var lettersNumbersAndSpecialCharacters = /(?=.*[A-Z][a-z])(?=.*[0-9])(?=.*[\!#\$%\.\*&])[A-Za-z\d\!#\$%\.\*&]{5,}/;
+  let regex = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[*\.%$#&!]).{5,}/;
 
-  return passwords.map(
+  return arr.map(
     (element, index) =>
-      element.match(lettersNumbersAndSpecialCharacters) && //match does not return boolean value so the ! makes the function return boolean
-      passwords.indexOf(element) === index //will check if same password have been used before
+      !!element.match(regex) && //match does not return boolean value so the ! makes the function return boolean
+      arr.indexOf(element) === index //will check if same password have been used before
   );
 }
 
