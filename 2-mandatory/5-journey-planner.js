@@ -64,7 +64,7 @@ function checkCodeIsThere(stringText) {
   
   Hint: Use the corresponding array method to split the array.
 */
-function getTransportModes(arr, transportMode) {
+function getTransportModes(arr) {
   return arr.slice(1);
 }
 
