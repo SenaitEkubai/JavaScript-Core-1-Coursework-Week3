@@ -10,13 +10,19 @@
 
     Some string methods that might help you here are .replace() and .substring(). 
 */
-
+// 1st method  using for loop and if statement
 function safeLevels(arr) {
-  /* for (var i = 0; i < arr.length; i++) {
-    if (arr[i] > "19.5%" && arr[i] < "23.5%") {
+  for (var i = 0; i < arr.length; i++) {
+    // parseFloat changes a string to number with decimal points
+    if (parseFloat(arr[i]) > 19.5 && parseFloat(arr[i]) < 23.5) {
       return arr[i];
     }
-  } */
+  }
+}
+
+// 2nd method using Javascript methods
+
+function safeLevels(arr) {
   return arr.find(
     (index) => parseFloat(index) > 19.5 && parseFloat(index) < 23.5
   );
